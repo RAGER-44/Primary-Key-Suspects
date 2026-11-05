@@ -1,1 +1,7 @@
-
+CREATE TABLE ARTISTS (
+  Artist_ID INT PRIMARY KEY,
+  First_Name VARCHAR(50) NOT NULL,
+  Last_Name VARCHAR(50) NOT NULL,
+  Nationality VARCHAR (50),
+  Email VARCHAR(100) UNIQUE
+  );
