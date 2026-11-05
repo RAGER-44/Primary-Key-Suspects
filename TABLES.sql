@@ -13,3 +13,15 @@ CREATE TABLE EXHIBITIONS (
     End_Date DATE,
     Location VARCHAR(150)
 );
+
+CREATE TABLE ARTWORKS (
+    Artwork_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Title VARCHAR(150) NOT NULL,
+    Medium VARCHAR(100),
+    Year_Created INT,
+    Price DECIMAL(10,2),
+    Status VARCHAR(30) DEFAULT 'Available',
+    Artist_ID INT NOT NULL,
+    Exhibition_ID INT NULL,
+    FOREIGN KEY (Artist_ID) REFERENCES ARTISTS(Artist_ID),
+    FOREIGN KEY (Exhibition_ID) REFERENCES EXHIBITIONS(Exhibition_ID)
