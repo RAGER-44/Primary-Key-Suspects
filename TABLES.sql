@@ -1,4 +1,4 @@
-CREATE TABLE `artists` (
+CREATE TABLE ARTISTS (
   `Artist_ID` int NOT NULL,
   `First_Name` varchar(50) DEFAULT NULL,
   `Last_Name` varchar(50) DEFAULT NULL,
