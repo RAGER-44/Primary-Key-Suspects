@@ -58,7 +58,3 @@ CREATE TABLE SCULPTURES (
     Weight_Kg DECIMAL(8,2),
     FOREIGN KEY (Artwork_ID) REFERENCES ARTWORKS(Artwork_ID)
 );
-
-INSERT INTO ARTISTS (First_Name, Last_Name, Nationality, Email)
-VALUES ('Frida', 'Kahlo', 'Mexican', 'frida@email.com'),
-       ('Auguste', 'Rodin', 'French', 'rodin@email.com');
