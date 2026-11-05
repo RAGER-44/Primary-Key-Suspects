@@ -82,6 +82,7 @@ VALUES (1, 'Spring Showcase', '01-10-2026', '03-15-2026', 'East Wing');
        (5, 'Fall Showcase', '06-24-2026', '09-18-2026', 'Main Gallery');
        (6, 'Spring Showcase', '10-04-2026', '12-15-2026', 'West Wing');
 
+--Values for Customers
 INSERT INTO CUSTOMERS (Customer_ID, First_Name, Last_Name, Email, Phone, Address)
   VALUES (001, 'Jax', 'Cruz', 'jax@gmail.com', '361-733-9484', '4111 Lydon St, PA'),
          (002, 'Ana', 'Scott', 'ana@gmail.com', '460-378-4893', '1492 Hickman St, TX'),
