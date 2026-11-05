@@ -96,3 +96,8 @@ INSERT INTO CUSTOMERS (Customer_ID, First_Name, Last_Name, Email, Phone, Address
          (010, 'Selena', 'Vela', 'selenaforever@yahoo.com', '361-967-1541', '410 Dangle Rd, MD'),
          (011, 'Angela', 'Tyson', 'twilight17@gmail.com', '956-841-6321', '1600 Little Av, WA'),
          (012, 'Crystal', 'Reyna', 'crystalLight901@yahoo.com', '460-955-4723', '2591 Windy St, MA');
+
+--Values for Artworks
+INSERT INTO ARTWORKS (Artwork_ID, Title, Medium, Year_Created, Price, Status, Artist_ID, Exhibition_ID) VALUES
+(1001, 'Blue Dusk', 'Painting', 2018, 800, 'On Display', 101, 1),
+(1002,
