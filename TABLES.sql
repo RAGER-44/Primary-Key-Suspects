@@ -60,6 +60,19 @@ CREATE TABLE SCULPTURES (
     FOREIGN KEY (Artwork_ID) REFERENCES ARTWORKS(Artwork_ID)
 );
 
+-- DATA
+INSERT INTO ARTISTS (Artist_ID, First_Name, Last_Name, Nationality, Email) VALUES
+(101, 'Maria', 'Garcia', 'American', 'maria.garcia@gmail.com'),
+(102, 'James', 'Park', 'French', 'james.park@gmail.com'),
+(103, 'Sam', 'Martinez', 'American', 'sam.martinez@gmail.com'),
+(104, 'Elena', 'Rossi', 'Italian', 'elena.rossi@gmail.com'),
+(105, 'Kenji', 'Tanaka', 'Japanese', 'kenji.tanaka@gmail.com'),
+(106, 'Mark', 'Grayson', 'Korean', 'mark.grayson@gmail.com'),
+(107, 'Marcello', 'Silva', 'Brazilian', 'marcello.silva@gmail.com'),
+(108, 'Sofia', 'Hernandez', 'Mexican', 'sofia.hernandez@gmail.com'),
+(109, 'Catalina', 'Harris', 'British', 'catalina.harris@gmail.com'),
+(110, 'Scott', 'McCall', 'American', 'scott.mccall@gmail.com');
+    
 --Values for Exhibitions
 INSERT INTO EXHIBITIONS (Title, Start_Date, End_Date, Location)
 VALUES (1, 'Spring Showcase', '01-10-2026', '03-15-2026', 'East Wing');
