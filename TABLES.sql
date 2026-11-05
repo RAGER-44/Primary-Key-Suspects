@@ -60,7 +60,7 @@ CREATE TABLE SCULPTURES (
     FOREIGN KEY (Artwork_ID) REFERENCES ARTWORKS(Artwork_ID)
 );
 
--- DATA
+-- Values for Artists
 INSERT INTO ARTISTS (Artist_ID, First_Name, Last_Name, Nationality, Email) VALUES
 (101, 'Maria', 'Garcia', 'American', 'maria.garcia@gmail.com'),
 (102, 'James', 'Park', 'French', 'james.park@gmail.com'),
