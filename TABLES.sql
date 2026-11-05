@@ -5,3 +5,11 @@ CREATE TABLE ARTISTS (
   Nationality VARCHAR (50),
   Email VARCHAR(100) UNIQUE
   );
+
+CREATE TABLE EXHIBITIONS (
+    Exhibition_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Title VARCHAR(150) NOT NULL,
+    Start_Date DATE,
+    End_Date DATE,
+    Location VARCHAR(150)
+);
