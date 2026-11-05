@@ -82,3 +82,16 @@ VALUES (1, 'Spring Showcase', '01-10-2026', '03-15-2026', 'East Wing');
        (5, 'Fall Showcase', '06-24-2026', '09-18-2026', 'Main Gallery');
        (6, 'Spring Showcase', '10-04-2026', '12-15-2026', 'West Wing');
 
+INSERT INTO CUSTOMERS (Customer_ID, First_Name, Last_Name, Email, Phone, Address)
+  VALUES (001, 'Jax', 'Cruz', 'jax@gmail.com', '361-733-9484', '4111 Lydon St, PA'),
+         (002, 'Ana', 'Scott', 'ana@gmail.com', '460-378-4893', '1492 Hickman St, TX'),
+         (003, 'Maria', 'Langford', 'marialangford@gmail.com', '460-489-3843', '2381 Jonny Lane, WI'),
+         (004, 'Emily', 'Johnson', 'emily.johnson93@gmail.com', '361-555-3279', '1462 Ocean Dr, TX'),
+         (005, 'Riley', 'Mitchell', 'mitchellR31@gmail.com', '956-614-7421', '615 Dody St, WA'),
+         (006, 'Jeffery', 'Davis', 'jdavis89@icloud.com', '210-875-9910', '8321 Lake Dr, KY'),
+         (007, 'Donald', 'Jackson', 'donald.jackson@yahoo.com', '210-987-5816', '1738 Bronson St, AZ'),
+         (008, 'Anthony', 'Rios', 'anthonyrios080@icloud.com', '956-782-2310', '569 Dolly St, OK'),
+         (009, 'Chris', 'Bing', 'bingbing@icloud.com', '210-654-8973', '3279 Olive St, OR'),
+         (010, 'Selena', 'Vela', 'selenaforever@yahoo.com', '361-967-1541', '410 Dangle Rd, MD'),
+         (011, 'Angela', 'Tyson', 'twilight17@gmail.com', '956-841-6321', '1600 Little Av, WA'),
+         (012, 'Crystal', 'Reyna', 'crystalLight901@yahoo.com', '460-955-4723', '2591 Windy St, MA');
