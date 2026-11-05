@@ -59,3 +59,13 @@ CREATE TABLE SCULPTURES (
     Weight_Kg DECIMAL(8,2),
     FOREIGN KEY (Artwork_ID) REFERENCES ARTWORKS(Artwork_ID)
 );
+
+--Values for Exhibitions
+INSERT INTO EXHIBITIONS (Title, Start_Date, End_Date, Location)
+VALUES (1, 'Spring Showcase', '01-10-2026', '03-15-2026', 'East Wing');
+       (2, 'Fall Showcase', '04-20-2026', '06-23-2026', 'Main Gallery');
+       (3, 'Fall Showcase', '08-26-2026', '10-05-2026', 'Main Gallery');
+       (4, 'Autumn Showcase', '03-15-2026', '04-23-2026', 'West Wing');
+       (5, 'Fall Showcase', '06-24-2026', '09-18-2026', 'Main Gallery');
+       (6, 'Spring Showcase', '10-04-2026', '12-15-2026', 'West Wing');
+
