@@ -1,3 +1,6 @@
+CREATE DATABASE art_gallery;
+USE art_gallery;
+
 CREATE TABLE ARTISTS (
     Artist_ID INT PRIMARY KEY,
     First_Name VARCHAR(50) NOT NULL,
