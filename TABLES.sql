@@ -66,14 +66,14 @@ INSERT INTO ARTISTS (Artist_ID, First_Name, Last_Name, Nationality, Email) VALUE
 (102, 'James', 'Park', 'French', 'james.park@gmail.com'),
 (103, 'Sam', 'Martinez', 'American', 'sam.martinez@gmail.com'),
 (104, 'Elena', 'Rossi', 'Italian', 'elena.rossi@gmail.com'),
-(105, 'Kenji', 'Tanaka', 'Japanese', 'kenji.tanaka@gmail.com'),
+(105, 'Hanzo', 'Hasashi', 'Japanese', 'kenji.tanaka@gmail.com'),
 (106, 'Mark', 'Grayson', 'Korean', 'mark.grayson@gmail.com'),
 (107, 'Marcello', 'Silva', 'Brazilian', 'marcello.silva@gmail.com'),
 (108, 'Sofia', 'Hernandez', 'Mexican', 'sofia.hernandez@gmail.com'),
 (109, 'Catalina', 'Harris', 'British', 'catalina.harris@gmail.com'),
 (110, 'Scott', 'McCall', 'American', 'scott.mccall@gmail.com');
     
---Values for Exhibitions
+-- Values for Exhibitions
 INSERT INTO EXHIBITIONS (Title, Start_Date, End_Date, Location)
 VALUES (1, 'Spring Showcase', '01-10-2026', '03-15-2026', 'East Wing');
        (2, 'Fall Showcase', '04-20-2026', '06-23-2026', 'Main Gallery');
@@ -82,7 +82,7 @@ VALUES (1, 'Spring Showcase', '01-10-2026', '03-15-2026', 'East Wing');
        (5, 'Fall Showcase', '06-24-2026', '09-18-2026', 'Main Gallery');
        (6, 'Spring Showcase', '10-04-2026', '12-15-2026', 'West Wing');
 
---Values for Customers
+-- Values for Customers
 INSERT INTO CUSTOMERS (Customer_ID, First_Name, Last_Name, Email, Phone, Address)
   VALUES (001, 'Jax', 'Cruz', 'jax@gmail.com', '361-733-9484', '4111 Lydon St, Scranton, PA'),
          (002, 'Ana', 'Scott', 'ana@gmail.com', '460-378-4893', '1492 Hickman St, Lubbock, TX'),
@@ -97,12 +97,116 @@ INSERT INTO CUSTOMERS (Customer_ID, First_Name, Last_Name, Email, Phone, Address
          (011, 'Angela', 'Tyson', 'twilight17@gmail.com', '956-841-6321', '1600 Little Av, Tacoma, WA'),
          (012, 'Crystal', 'Reyna', 'crystalLight901@yahoo.com', '460-955-4723', '2591 Windy St, Plymouth, MA');
 
---Values for Artworks
+-- Values for Artworks
 INSERT INTO ARTWORKS (Artwork_ID, Title, Medium, Year_Created, Price, Status, Artist_ID, Exhibition_ID) VALUES
 (1001, 'Blue Dusk', 'Painting', 2018, 800, 'On Display', 101, 1),
-(1002,
+(1002, 'Quiet Field', 'Painting', 2019, 1170, 'Available', 104, NULL),
+(1003, 'Iron Tide', 'Painting', 2020, 1550, 'On Display', 107, 3),
+(1004, 'Amber Hours', 'Sculpture', 2021, 1930, 'Available', 110, NULL),
+(1005, 'Salt Wind', 'Sculpture', 2022, 2300, 'Available', 103, 2),
+(1006, 'Harbor Light', 'Painting', 2023, 2680, 'On Display', 106, 6),
+(1007, 'Paper Moon', 'Painting', 2024, 3060, 'Available', 109, NULL),
+(1008, 'Desert Bloom', 'Painting', 2025, 3430, 'Available', 102, NULL),
+(1009, 'Still Water', 'Sculpture', 2026, 3810, 'On Display', 105, 3),
+(1010, 'Red Horizon', 'Sculpture', 2018, 4190, 'Available', 108, NULL),
+(1011, 'Echo Chamber', 'Painting', 2019, 4570, 'On Display', 101, 5),
+(1012, 'Morning Fog', 'Painting', 2020, 4940, 'Available', 104, NULL),
+(1013, 'Copper Wave', 'Painting', 2021, 1120, 'On Display', 107, 1),
+(1014, 'Night Garden', 'Sculpture', 2022, 1500, 'Available', 110, NULL),
+(1015, 'Open Window', 'Sculpture', 2023, 1870, 'Available', 103, 3),
+(1016, 'Falling Light', 'Painting', 2024, 2250, 'On Display', 106, 4),
+(1017, 'Stone Memory', 'Painting', 2025, 2630, 'Available', 109, NULL),
+(1018, 'Silver Rain', 'Painting', 2026, 3000, 'Available', 102, NULL),
+(1019, 'Winter Orchard', 'Sculpture', 2018, 3380, 'On Display', 105, 1),
+(1020, 'Burnt Sand', 'Sculpture', 2019, 3760, 'Available', 108, NULL),
+(1021, 'The Long Road', 'Painting', 2020, 4140, 'On Display', 101, 3),
+(1022, 'Green Moss', 'Painting', 2021, 4510, 'Available', 104, NULL),
+(1023, 'Tidal Form', 'Painting', 2022, 4890, 'On Display', 107, 5),
+(1024, 'Fractured Sky', 'Sculpture', 2023, 1070, 'Available', 110, NULL),
+(1025, 'Weight of Air', 'Sculpture', 2024, 1440, 'Available', 103, 1),
+(1026, 'Marigold', 'Painting', 2025, 1820, 'On Display', 106, 2),
+(1027, 'Slow Current', 'Painting', 2026, 2200, 'Available', 109, NULL),
+(1028, 'Ash and Ivory', 'Painting', 2018, 2570, 'Available', 102, NULL),
+(1029, 'Lantern Row', 'Sculpture', 2019, 2950, 'On Display', 105, 5),
+(1030, 'Dry Creek', 'Sculpture', 2020, 3330, 'Available', 108, NULL),
+(1031, 'Folded Time', 'Painting', 2021, 3710, 'On Display', 101, 1),
+(1032, 'Coral Study', 'Painting', 2022, 4080, 'Available', 104, NULL),
+(1033, 'Midday Heat', 'Painting', 2023, 4460, 'On Display', 107, 3),
+(1034, 'Crescent', 'Sculpture', 2024, 4840, 'Available', 110, NULL),
+(1035, 'Hollow Tree', 'Sculpture', 2025, 1010, 'Available', 103, 2),
+(1036, 'Backyard Sun', 'Painting', 2026, 1390, 'On Display', 106, 6),
+(1037, 'Granite Dream', 'Painting', 2018, 1770, 'Available', 109, NULL),
+(1038, 'Low Tide', 'Painting', 2019, 2140, 'Available', 102, NULL),
+(1039, 'Violet Hour', 'Sculpture', 2020, 2520, 'On Display', 105, 3),
+(1040, 'Rust Belt', 'Sculpture', 2021, 2900, 'Available', 108, NULL),
+(1041, 'Wandering Line', 'Painting', 2022, 3280, 'On Display', 101, 5),
+(1042, 'Gulf Breeze', 'Painting', 2023, 3650, 'Available', 104, NULL),
+(1043, 'Thread and Bone', 'Painting', 2024, 4030, 'On Display', 107, 1),
+(1044, 'North Light', 'Sculpture', 2025, 4410, 'Available', 110, NULL),
+(1045, 'Cactus Flower', 'Sculpture', 2026, 4780, 'Available', 103, 3),
+(1046, 'Glass Garden', 'Painting', 2018, 960, 'On Display', 106, 4),
+(1047, 'Moth Wing', 'Painting', 2019, 1340, 'Available', 109, NULL),
+(1048, 'Dune Song', 'Painting', 2020, 1710, 'Available', 102, NULL),
+(1049, 'Quiet Harbor', 'Sculpture', 2021, 2090, 'On Display', 105, 1),
+(1050, 'Ember', 'Sculpture', 2022, 2470, 'Available', 108, NULL);
 
---Values for Sales
+-- Paintings
+INSERT INTO PAINTINGS (Artwork_ID, Paint_Type, Surface) VALUES
+    (1001, 'Oil', 'Canvas'),
+    (1002, 'Acrylic', 'Paper'),
+    (1003, 'Watercolor', 'Wood Panel'),
+    (1006, 'Oil', 'Paper'),
+    (1007, 'Acrylic', 'Wood Panel'),
+    (1008, 'Watercolor', 'Linen'),
+    (1011, 'Oil', 'Wood Panel'),
+    (1012, 'Acrylic', 'Linen'),
+    (1013, 'Watercolor', 'Canvas'),
+    (1016, 'Oil', 'Linen'),
+    (1017, 'Acrylic', 'Canvas'),
+    (1018, 'Watercolor', 'Paper'),
+    (1021, 'Oil', 'Canvas'),
+    (1022, 'Acrylic', 'Paper'),
+    (1023, 'Watercolor', 'Wood Panel'),
+    (1026, 'Oil', 'Paper'),
+    (1027, 'Acrylic', 'Wood Panel'),
+    (1028, 'Watercolor', 'Linen'),
+    (1031, 'Oil', 'Wood Panel'),
+    (1032, 'Acrylic', 'Linen'),
+    (1033, 'Watercolor', 'Canvas'),
+    (1036, 'Oil', 'Linen'),
+    (1037, 'Acrylic', 'Canvas'),
+    (1038, 'Watercolor', 'Paper'),
+    (1041, 'Oil', 'Canvas'),
+    (1042, 'Acrylic', 'Paper'),
+    (1043, 'Watercolor', 'Wood Panel'),
+    (1046, 'Oil', 'Paper'),
+    (1047, 'Acrylic', 'Wood Panel'),
+    (1048, 'Watercolor', 'Linen');
+
+-- Sculptures
+INSERT INTO SCULPTURES (Artwork_ID, Material, Weight_Kg) VALUES
+    (1004, 'Clay', 12.1),
+    (1005, 'Wood', 14.8),
+    (1009, 'Steel', 25.6),
+    (1010, 'Clay', 28.3),
+    (1014, 'Marble', 39.1),
+    (1015, 'Steel', 41.8),
+    (1019, 'Bronze', 52.6),
+    (1020, 'Marble', 55.3),
+    (1024, 'Glass', 6.1),
+    (1025, 'Bronze', 8.8),
+    (1029, 'Wood', 19.6),
+    (1030, 'Glass', 22.3),
+    (1034, 'Clay', 33.1),
+    (1035, 'Wood', 35.8),
+    (1039, 'Steel', 46.6),
+    (1040, 'Clay', 49.3),
+    (1044, 'Marble', 60.1),
+    (1045, 'Steel', 62.8),
+    (1049, 'Bronze', 13.6),
+    (1050, 'Marble', 16.3);
+
+-- Values for Sales
 INSERT INTO SALES (Sale_ID, Sale_Date, Sale_Price, Artwork_ID, Customer_ID)
 VALUES (111, '2026-02-15', 1230.00, , 009),
        (112, '2026-03-01', 4200.00, , 007),
@@ -119,3 +223,9 @@ VALUES (111, '2026-02-15', 1230.00, , 009),
        (123, '2026-02-14', 2500.00, , 010),
        (124, '2026-11-02', 3200.00, , 004),
        (125, '2026-10-25', 1500.00, , 009);
+
+-- QUERIES
+-- join sale with artwork, artist and buyer
+
+--query where we can show availble artworks or maybe most expensive art works first?
+-- we can use orderby
