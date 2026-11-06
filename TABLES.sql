@@ -9,17 +9,17 @@ CREATE TABLE ARTISTS (
 CREATE TABLE EXHIBITIONS (
     Exhibition_ID INT PRIMARY KEY AUTO_INCREMENT,
     Title VARCHAR(150) NOT NULL,
-    Start_Date DATE,
-    End_Date DATE,
-    Location VARCHAR(150)
+    Start_Date DATE NOT NULL,
+    End_Date DATE NOT NULL,
+    Location VARCHAR(150) NOT NULL
 );
 
 CREATE TABLE ARTWORKS (
     Artwork_ID INT PRIMARY KEY AUTO_INCREMENT,
     Title VARCHAR(150) NOT NULL,
-    Medium VARCHAR(100),
+    Medium VARCHAR(20) NOT NULL,
     Year_Created INT,
-    Price DECIMAL(10,2),
+    Price DECIMAL(10,2) NOT NULL,
     Status VARCHAR(30) DEFAULT 'Available',
     Artist_ID INT NOT NULL,
     Exhibition_ID INT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE CUSTOMERS (
     Sale_ID INT PRIMARY KEY AUTO_INCREMENT,
     Sale_Date DATE NOT NULL,
     Sale_Price DECIMAL(10,2) NOT NULL,
-    Artwork_ID INT NOT NULL,
+    Artwork_ID INT NOT NULL UNIQUE,
     Customer_ID INT NOT NULL,
     FOREIGN KEY (Artwork_ID) REFERENCES ARTWORKS(Artwork_ID),
     FOREIGN KEY (Customer_ID) REFERENCES CUSTOMERS(Customer_ID)
