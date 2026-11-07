@@ -300,3 +300,10 @@ FROM ARTWORKS
 JOIN ARTISTS ON ARTWORKS.Artist_ID = ARTISTS.Artist_ID
 WHERE ARTWORKS.Status = 'Available'
 ORDER BY ARTWORKS.Price DESC;
+
+--This query shows artworks created by a specific artist
+SELECT ARTWORKS.Artwork_ID, Artworks.Title, ARTWORKS.Medium,
+       ARTWORKS.Price, ARTISTS.First_Name, ARTISTS.Last_Name
+FROM ARTWORKS
+JOIN ARTISTS ON ARTWORKS.Artist_ID = ARTISTS.Artist_ID
+WHERE ARTISTS.First_Name = 'Maria' AND ARTISTS.Last_Name = 'Garcia'; 
