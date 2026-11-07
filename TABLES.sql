@@ -213,19 +213,26 @@ VALUES (1004, 'Clay', 12.1),
 INSERT INTO SALES (Sale_ID, Sale_Date, Sale_Price, Artwork_ID, Customer_ID)
 VALUES (111, '2026-02-15', 1770.00, 1037, 009),
        (112, '2026-03-01', 4940.00, 1012, 007),
-       (113, '2026-05-13', 4030.00, 1043, 005),
+       (113, '2026-03-10', 4030.00, 1043, 005),
        (114, '2026-06-01', 1170.00, 1002, 012),
-       (115, '2026-08-30', 2680.00, 1006, 001),
+       (115, '2026-10-10', 2680.00, 1006, 001),
        (116, '2026-09-25', 2630.00, 1017, 010),
        (117, '2026-09-15', 2470.00, 1050, 008),
        (118, '2026-03-20', 1070.00, 1024, 006),
        (119, '2026-04-10', 3760.00, 1020, 004),
-       (120, '2026-07-02', 960.00, 1046, 011),
-       (121, '2026-08-15', 1870.00, 1015, 002),
-       (122, '2026-01-20', 4570.00, 1011, 003),
+       (120, '2026-04-10', 960.00, 1046, 011),
+       (121, '2026-09-01', 1870.00, 1015, 002),
+       (122, '2026-07-10', 4570.00, 1011, 003),
        (123, '2026-02-14', 800.00, 1001, 010),
-       (124, '2026-11-02', 3810.00, 1009, 004),
+       (124, '2026-09-10', 3810.00, 1009, 004),
        (125, '2026-10-25', 3330.00, 1030, 009);
+
+-- Update artwork status after sales
+UPDATE ARTWORKS
+    SET Status = 'Sold'
+    WHERE Artwork_ID IN
+    (1037, 1012, 1043, 1002, 1006, 1017, 1050, 1024,
+     1020, 1046, 1015, 1011, 1001, 1009, 1030);
 
 -- QUERIES
 --This query joins all seven tables to produce a complete record of each art sale.
@@ -273,9 +280,9 @@ SELECT
     SCULPTURES.Weight_Kg       AS SCULPTURES_Weight_Kg
     FROM SALES 
     JOIN ARTWORKS              ON SALES.Artwork_ID = ARTWORKS.Artwork_ID
-    JOIN ARTISTS               ON ARTWORKS.Artists_ID = ARTISTS.Artist_ID
+    JOIN ARTISTS               ON ARTWORKS.Artist_ID = ARTISTS.Artist_ID
     JOIN CUSTOMERS             ON SALES.Customer_ID = CUSTOMERS.Customer_ID
-    LEFT JOIN EXHIBITIONS      ON ARTWORKS.Exhibition_ID = EXHIBITION.Exhibition_ID
+    LEFT JOIN EXHIBITIONS      ON ARTWORKS.Exhibition_ID = EXHIBITIONS.Exhibition_ID
     LEFT JOIN PAINTINGS        ON ARTWORKS.Artwork_ID = PAINTINGS.Artwork_ID
     LEFT JOIN SCULPTURES       ON ARTWORKS.Artwork_ID = SCULPTURES.Artwork_ID;
 
