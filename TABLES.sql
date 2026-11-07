@@ -78,12 +78,12 @@ VALUES (101, 'Maria', 'Garcia', 'American', 'maria.garcia@gmail.com'),
     
 -- Values for Exhibitions
 INSERT INTO EXHIBITIONS (Title, Start_Date, End_Date, Location)
-VALUES (1, 'Spring Showcase', '01-10-2026', '03-15-2026', 'East Wing');
-       (2, 'Fall Showcase', '04-20-2026', '06-23-2026', 'Main Gallery');
-       (3, 'Fall Showcase', '08-26-2026', '10-05-2026', 'Main Gallery');
-       (4, 'Autumn Showcase', '03-15-2026', '04-23-2026', 'West Wing');
-       (5, 'Fall Showcase', '06-24-2026', '09-18-2026', 'Main Gallery');
-       (6, 'Spring Showcase', '10-04-2026', '12-15-2026', 'West Wing');
+VALUES (1, 'Spring Showcase', '2026-01-10', '2026-03-15', 'East Wing'),
+       (2, 'Fall Showcase', '2026-04-20', '2026-06-23', 'Main Gallery'),
+       (3, 'Fall Showcase', '2026-08-26', '2026-10-05', 'Main Gallery'),
+       (4, 'Autumn Showcase', '2026-03-15', '2026-04-23', 'West Wing'),
+       (5, 'Fall Showcase', '2026-06-24', '2026-09-18', 'Main Gallery'),
+       (6, 'Spring Showcase', '2026-10-04', '2026-12-15', 'West Wing');
 
 -- Values for Customers
 INSERT INTO CUSTOMERS (Customer_ID, First_Name, Last_Name, Email, Phone, Address)
@@ -235,7 +235,7 @@ UPDATE ARTWORKS
      1020, 1046, 1015, 1011, 1001, 1009, 1030);
 
 -- QUERIES
---This query joins all seven tables to produce a complete record of each art sale.
+-- This query joins all seven tables to produce a complete record of each art sale.
 SELECT 
     SALES.Sale_ID              AS Sale_ID,  
     SALES.Sale_Date            AS Sale_Date,
@@ -286,7 +286,7 @@ SELECT
     LEFT JOIN PAINTINGS        ON ARTWORKS.Artwork_ID = PAINTINGS.Artwork_ID
     LEFT JOIN SCULPTURES       ON ARTWORKS.Artwork_ID = SCULPTURES.Artwork_ID;
 
---This query shows all the available artworks and displays the most expensive artworks first.
+-- This query shows all the available artworks and displays the most expensive artworks first.
 SELECT 
     ARTWORKS.Artwork_ID,
     ARTWORKS.Title,
@@ -301,29 +301,29 @@ JOIN ARTISTS ON ARTWORKS.Artist_ID = ARTISTS.Artist_ID
 WHERE ARTWORKS.Status = 'Available'
 ORDER BY ARTWORKS.Price DESC;
 
---This query shows artworks created by a specific artist
+-- This query shows artworks created by a specific artist
 SELECT ARTWORKS.Artwork_ID, Artworks.Title, ARTWORKS.Medium,
        ARTWORKS.Price, ARTISTS.First_Name, ARTISTS.Last_Name
 FROM ARTWORKS
 JOIN ARTISTS ON ARTWORKS.Artist_ID = ARTISTS.Artist_ID
 WHERE ARTISTS.First_Name = 'Maria' AND ARTISTS.Last_Name = 'Garcia';
 
---This query displays artworks priced below $2000.00, starting with the least expensive
+-- This query displays artworks priced below $2000.00, starting with the least expensive
 SELECT Artwork_ID, Title, Medium, Price, Status
 FROM ARTWORKS
 WHERE Price < 2000.00
 ORDER BY Price ASC;
 
---This query counts how many paintings and sculptures are in the gallery
+-- This query counts how many paintings and sculptures are in the gallery
 SELECT Medium, COUNT(*) AS Total_Artworks
 FROM ARTWORKS
 GROUP BY Medium;
 
---This query calculates the total amount of money the gallery has made from recorded sales
+-- This query calculates the total amount of money the gallery has made from recorded sales
 SELECT SUM(Sale_Price) AS Total_Sales
 FROM SALES;
 
---This query finds customers who have made a purchase
+-- This query finds customers who have made a purchase
 SELECT Customer_ID, First_Name, Last_Name, Email
 FROM CUSTOMERS
 WHERE Customer_ID IN (
@@ -332,7 +332,7 @@ WHERE Customer_ID IN (
 )
 ORDER BY Last_Name ASC;
 
---This query displays artworks assigned to a specific exhibition
+-- This query displays artworks assigned to a specific exhibition
 SELECT ARTWORKS.Artwork_ID, ARTWORKS.Title, ARTWORKS.Medium, ARTWORKS.Status,
        EXHIBITIONS.Title AS Exhibition_Name
 FROM ARTWORKS
