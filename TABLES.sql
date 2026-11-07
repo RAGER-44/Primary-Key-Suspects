@@ -279,7 +279,7 @@ SELECT
     LEFT JOIN PAINTINGS        ON ARTWORKS.Artwork_ID = PAINTINGS.Artwork_ID
     LEFT JOIN SCULPTURES       ON ARTWORKS.Artwork_ID = SCULPTURES.Artwork_ID;
 
---This query shows all the availble artworks and displays the most expensive artworks first.
+--This query shows all the available artworks and displays the most expensive artworks first.
 SELECT 
     ARTWORKS.Artwork_ID,
     ARTWORKS.Title,
