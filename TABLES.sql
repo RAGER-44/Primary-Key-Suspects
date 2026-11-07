@@ -228,7 +228,7 @@ VALUES (111, '2026-02-15', 1230.00, , 009),
        (125, '2026-10-25', 1500.00, , 009);
 
 -- QUERIES
--- join sale with artwork, artist and buyer
+--This query joins all seven tables to produce a complete record of each art sale.
 SELECT 
     SALES.Sale_ID              AS Sale_ID,  
     SALES.Sale_Date            AS Sale_Date,
