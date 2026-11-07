@@ -306,4 +306,35 @@ SELECT ARTWORKS.Artwork_ID, Artworks.Title, ARTWORKS.Medium,
        ARTWORKS.Price, ARTISTS.First_Name, ARTISTS.Last_Name
 FROM ARTWORKS
 JOIN ARTISTS ON ARTWORKS.Artist_ID = ARTISTS.Artist_ID
-WHERE ARTISTS.First_Name = 'Maria' AND ARTISTS.Last_Name = 'Garcia'; 
+WHERE ARTISTS.First_Name = 'Maria' AND ARTISTS.Last_Name = 'Garcia';
+
+--This query displays artworks priced below $2000.00, starting with the least expensive
+SELECT Artwork_ID, Title, Medium, Price, Status
+FROM ARTWORKS
+WHERE Price < 2000.00
+ORDER BY Price ASC;
+
+--This query counts how many paintings and sculptures are in the gallery
+SELECT Medium, COUNT(*) AS Total_Artworks
+FROM ARTWORKS
+GROUP BY Medium;
+
+--This query calculates the total amount of money the gallery has made from recorded sales
+SELECT SUM(Sale_Price) AS Total_Sales
+FROM SALES;
+
+--This query finds customers who have made a purchase
+SELECT Customer_ID, First_Name, Last_Name, Email
+FROM CUSTOMERS
+WHERE Customer_ID IN (
+    SELECT Customer_ID
+    FROM SALES
+)
+ORDER BY Last_Name ASC;
+
+--This query displays artworks assigned to a specific exhibition
+SELECT ARTWORKS.Artwork_ID, ARTWORKS.Title, ARTWORKS.Medium, ARTWORKS.Status,
+       EXHIBITIONS.Title AS Exhibition_Name
+FROM ARTWORKS
+JOIN EXHIBITIONS ON ARTWORKS.Exhibition_ID = EXHIBITIONS.Exhibition_ID
+WHERE EXHIBITIONS.Exhibition_ID = 3;
