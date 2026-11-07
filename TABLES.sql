@@ -279,5 +279,17 @@ SELECT
     LEFT JOIN PAINTINGS        ON ARTWORKS.Artwork_ID = PAINTINGS.Artwork_ID
     LEFT JOIN SCULPTURES       ON ARTWORKS.Artwork_ID = SCULPTURES.Artwork_ID;
 
---query where we can show availble artworks or maybe most expensive art works first?
--- we can use orderby
+--This query shows all the availble artworks and displays the most expensive artworks first.
+SELECT 
+    ARTWORKS.Artwork_ID,
+    ARTWORKS.Title,
+    ARTWORKS.Medium,
+    ARTWORKS.Year_Created,
+    ARTWORKS.Price,
+    ARTWORKS.Status,
+    ARTISTS.First_Name,
+    ARTISTS.Last_Name
+FROM ARTWORKS
+JOIN ARTISTS ON ARTWORKS.Artist_ID = ARTISTS.Artist_ID
+WHERE ARTWORKS.Status = 'Available'
+ORDER BY ARTWORKS.Price DESC;
