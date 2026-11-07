@@ -229,6 +229,55 @@ VALUES (111, '2026-02-15', 1230.00, , 009),
 
 -- QUERIES
 -- join sale with artwork, artist and buyer
+SELECT 
+    SALES.Sale_ID              AS Sale_ID,  
+    SALES.Sale_Date            AS Sale_Date,
+    SALES.Sale_Price           AS Sale_Price,
+    SALES.Artwork_ID           AS Sale_Artwork_ID,
+    SALES.Customer_ID          AS Sale_Customer_ID,
+
+    ARTWORKS.Artwork_ID        AS Artwork_ID,
+    ARTWORKS.Title             AS Artwork_Title,
+    ARTWORKS.Medium            AS Artwork_Medium,
+    ARTWORKS.Year_Created      AS Artwork_Year_Created,
+    ARTWORKS.Price             AS Artwork_List_Price,
+    ARTWORKS.Status            AS Artwork_Status,
+    ARTWORKS.Artist_ID         AS Artwork_Artist_ID,
+    ARTWORKS.Exhibition_ID     AS Artwork_Exhibition_ID,
+
+    ARTISTS.Artist_ID          AS Artist_ID,
+    ARTISTS.First_Name         AS Artist_First_Name,
+    ARTISTS.Last_Name          AS Artist_Last_Name,
+    ARTISTS.Nationality        AS Artist_Nationality,
+    ARTISTS.Email              AS Artist_Email,
+
+    CUSTOMERS.Customer_ID      AS Customer_ID,
+    CUSTOMERS.First_Name       AS Customer_First_Name,
+    CUSTOMERS.Last_Name        AS Customer_Last_Name,
+    CUSTOMERS.Email            AS Customer_Email,
+    CUSTOMERS.Phone            AS Customer_Phone,
+    CUSTOMERS.Address          AS Customer_Address,
+
+    EXHIBITIONS.Exhibition_ID  AS Exhibition_ID,
+    EXHIBITIONS.Title          AS Exhibition_Title,
+    EXHIBITIONS.Start_Date     AS Exhibition_Start_Date,
+    EXHIBITIONS.End_Date       AS Exhibition_End_Date,
+    EXHIBITIONS.Location       AS Exhibition_Location,
+
+    PAINTINGS.Artwork_ID       AS PAINTINGS_Artwork_ID,
+    PAINTINGS.Paint_Type       AS PAINTINGS_Paint_Type,
+    PAINTINGS.Surface          AS PAINTINGS_Surface,
+
+    SCULPTURES.Artwork_ID      AS SCULPTURES_Artwork_ID,
+    SCULPTURES.Material        AS SCULPTURES_Material,
+    SCULPTURES.Weight_Kg       AS SCULPTURES_Weight_Kg
+    FROM SALES 
+    JOIN ARTWORKS              ON SALES.Artwork_ID = ARTWORKS.Artwork_ID
+    JOIN ARTISTS               ON ARTWORKS.Artists_ID = ARTISTS.Artist_ID
+    JOIN CUSTOMERS             ON SALES.Customer_ID = CUSTOMERS.Customer_ID
+    LEFT JOIN EXHIBITIONS      ON ARTWORKS.Exhibition_ID = EXHIBITION.Exhibition_ID
+    LEFT JOIN PAINTINGS        ON ARTWORKS.Artwork_ID = PAINTINGS.Artwork_ID
+    LEFT JOIN SCULPTURES       ON ARTWORKS.Artwork_ID = SCULPTURES.Artwork_ID;
 
 --query where we can show availble artworks or maybe most expensive art works first?
 -- we can use orderby
