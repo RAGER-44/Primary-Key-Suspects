@@ -82,8 +82,8 @@ VALUES (1, 'Winter Showcase', '2026-01-10', '2026-03-15', 'East Wing'),
        (2, 'Spring Showcase', '2026-04-20', '2026-06-23', 'Main Gallery'),
        (3, 'Fall Showcase', '2026-08-26', '2026-10-05', 'Main Gallery'),
        (4, 'Season Preview Showcase', '2026-03-15', '2026-04-23', 'West Wing'),
-       (5, 'Holiday Showcase', '2026-06-24', '2026-08-25', 'Main Gallery'),
-       (6, 'Spring Showcase', '2026-10-04', '2026-12-15', 'West Wing');
+       (5, 'Summer Showcase', '2026-06-24', '2026-08-25', 'Main Gallery'),
+       (6, 'Holiday Showcase', '2026-10-04', '2026-12-15', 'West Wing');
 
 -- Values for Customers
 INSERT INTO CUSTOMERS (Customer_ID, First_Name, Last_Name, Email, Phone, Address)
