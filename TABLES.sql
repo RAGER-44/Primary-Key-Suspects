@@ -77,12 +77,12 @@ VALUES (101, 'Maria', 'Garcia', 'American', 'maria.garcia@gmail.com'),
        (110, 'Scott', 'McCall', 'American', 'scott.mccall@gmail.com');
     
 -- Values for Exhibitions
-INSERT INTO EXHIBITIONS (Title, Start_Date, End_Date, Location)
-VALUES (1, 'Spring Showcase', '2026-01-10', '2026-03-15', 'East Wing'),
-       (2, 'Fall Showcase', '2026-04-20', '2026-06-23', 'Main Gallery'),
+INSERT INTO EXHIBITIONS (Exhibition_ID, Title, Start_Date, End_Date, Location)
+VALUES (1, 'Winter Showcase', '2026-01-10', '2026-03-15', 'East Wing'),
+       (2, 'Spring Showcase', '2026-04-20', '2026-06-23', 'Main Gallery'),
        (3, 'Fall Showcase', '2026-08-26', '2026-10-05', 'Main Gallery'),
-       (4, 'Autumn Showcase', '2026-03-15', '2026-04-23', 'West Wing'),
-       (5, 'Fall Showcase', '2026-06-24', '2026-09-18', 'Main Gallery'),
+       (4, 'Season Preview Showcase', '2026-03-15', '2026-04-23', 'West Wing'),
+       (5, 'Holiday Showcase', '2026-06-24', '2026-08-25', 'Main Gallery'),
        (6, 'Spring Showcase', '2026-10-04', '2026-12-15', 'West Wing');
 
 -- Values for Customers
@@ -302,7 +302,7 @@ WHERE ARTWORKS.Status = 'Available'
 ORDER BY ARTWORKS.Price DESC;
 
 -- This query shows artworks created by a specific artist
-SELECT ARTWORKS.Artwork_ID, Artworks.Title, ARTWORKS.Medium,
+SELECT ARTWORKS.Artwork_ID, ARTWORKS.Title, ARTWORKS.Medium,
        ARTWORKS.Price, ARTISTS.First_Name, ARTISTS.Last_Name
 FROM ARTWORKS
 JOIN ARTISTS ON ARTWORKS.Artist_ID = ARTISTS.Artist_ID
@@ -338,3 +338,4 @@ SELECT ARTWORKS.Artwork_ID, ARTWORKS.Title, ARTWORKS.Medium, ARTWORKS.Status,
 FROM ARTWORKS
 JOIN EXHIBITIONS ON ARTWORKS.Exhibition_ID = EXHIBITIONS.Exhibition_ID
 WHERE EXHIBITIONS.Exhibition_ID = 3;
+
