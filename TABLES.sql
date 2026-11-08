@@ -315,9 +315,9 @@ WHERE Price < 2000.00
 ORDER BY Price ASC;
 
 -- This query counts how many paintings and sculptures are in the gallery
-SELECT Medium, COUNT(*) AS Total_Artworks
-FROM ARTWORKS
-GROUP BY Medium;
+SELECT 'PAINTINGS' AS Type, COUNT(*) AS Total FROM PAINTINGS
+UNION 
+SELECT 'Sculptures', COUNT(*) FROM SCULPTURES;
 
 -- This query calculates the total amount of money the gallery has made from recorded sales
 SELECT SUM(Sale_Price) AS Total_Sales
