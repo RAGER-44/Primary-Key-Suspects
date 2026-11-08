@@ -1,3 +1,7 @@
+
+-- For re-running script without errors
+DROP DATABASE IF EXISTS art_gallery;
+
 CREATE DATABASE art_gallery;
 USE art_gallery;
 
@@ -315,9 +319,9 @@ WHERE Price < 2000.00
 ORDER BY Price ASC;
 
 -- This query counts how many paintings and sculptures are in the gallery
-SELECT 'PAINTINGS' AS Type, COUNT(*) AS Total FROM PAINTINGS
-UNION 
-SELECT 'Sculptures', COUNT(*) FROM SCULPTURES;
+SELECT Medium, COUNT(*) AS Total_Artworks
+FROM ARTWORKS
+GROUP BY Medium;
 
 -- This query calculates the total amount of money the gallery has made from recorded sales
 SELECT SUM(Sale_Price) AS Total_Sales
@@ -338,4 +342,10 @@ SELECT ARTWORKS.Artwork_ID, ARTWORKS.Title, ARTWORKS.Medium, ARTWORKS.Status,
 FROM ARTWORKS
 JOIN EXHIBITIONS ON ARTWORKS.Exhibition_ID = EXHIBITIONS.Exhibition_ID
 WHERE EXHIBITIONS.Exhibition_ID = 3;
+
+-- This query finds artworks priced above the gallery's average price
+SELECT Artwork_ID, Title, Medium, Price
+FROM ARTWORKS
+WHERE Price > (SELECT AVG(Price) FROM ARTWORKS)
+ORDER BY Price DESC;
 
